@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/stage')
+require('./lib/album')
 require('pry')
 also_reload('lib/**/*.rb')
-require('./lib/artist')
+require('./lib/definition')
