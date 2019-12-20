@@ -1,26 +1,35 @@
 class Word
-  attr_read :id, :actual_word
-  attr_accessor :def1, :def2, :def3
+  attr_reader :id
+  attr_accessor :actual_word
 
-  def initialize(id = nil, actual_word, def1 = nil, def2 = nil, def3 = nil)
-    @actual_word = actual_word
-    @def1 = def1
-    @def2 = def2
-    @def3 = def3
+  def initialize(id = nil, actual_word)
     @id = id || @@total_rows +=1
+    @actual_word = actual_word
   end
 
   def save
     @@words[self.id] = self
-
   end
+
+  def update(actual_word)
+  @actual_word = actual_word
+end
+
+def delete
+  @@words.delete(@id)
+end
 
   ##class Methods
   @@words = {}
   @@total_rows = 0
 
-  def self.all
-    @@words.
-
+  def self.clear
+    @@words = {}
+    @@total_rows = 0
   end
+
+  def self.all
+    @@words.values
+  end
+
 end
