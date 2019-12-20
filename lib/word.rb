@@ -31,4 +31,8 @@ end
   def self.all
     @@words.values
   end
+
+  def self.find(id)
+    @@words[id]
+  end
 end

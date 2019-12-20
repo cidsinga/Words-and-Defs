@@ -25,46 +25,37 @@ describe '#Definition' do
     definition2 = Definition.new("shelter", @actual_word, nil).save
     Definition.clear()
     expect(Definition.all).to(eq([]))
+    end
   end
-end
 
-describe('#save') do
-  it("saves a definition") do
-    definition1 = Definition.new("dwelling place", @actual_word, nil).save
-    expect(Definition.all).to(eq([definition1]))
+  describe('#save') do
+    it("saves a definition") do
+      definition1 = Definition.new("dwelling place", @actual_word, nil).save
+      expect(Definition.all).to(eq([definition1]))
+    end
   end
-end
 
-describe('.find') do
-  it("finds a song by id") do
-    definition1 = Definition.new("dwelling place", @actual_word, nil).save
-    definition2 = Definition.new("shelter", @actual_word, nil).save
-    expect(Definition.find(definition1.id)).to(eq(definition1))
+  describe('.find') do
+    it("finds a song by id") do
+      definition1 = Definition.new("dwelling place", @actual_word, nil).save
+      definition2 = Definition.new("shelter", @actual_word, nil).save
+      expect(Definition.find(definition1.id)).to(eq(definition1))
+    end
   end
-end
-describe('#update') do
-  it("updates a definition by id") do
-    definition1 = Definition.new("dwelling place", @word, nil).save
-    definition1.update("ones Krib", @word)
-    expect(definition1.word_def).to(eq("ones Krib"))
+  describe('#update') do
+    it("updates a definition by id") do
+      definition1 = Definition.new("dwelling place", @word, nil).save
+      definition1.update("ones Krib", @word)
+      expect(definition1.word_def).to(eq("ones Krib"))
+    end
   end
-end
 
-describe('#delete') do
-  it("deletes an definition by id") do
-    definition1 = Definition.new("dwelling place", @actual_word, nil).save
-    definition2 = Definition.new("shelter", @actual_word, nil).save
-    definition1.delete()
-    expect(Definition.all).to(eq([definition2]))
+  describe('#delete') do
+    it("deletes an definition by id") do
+      definition1 = Definition.new("dwelling place", @actual_word, nil).save
+      definition2 = Definition.new("shelter", @actual_word, nil).save
+      definition1.delete()
+      expect(Definition.all).to(eq([definition2]))
+    end
   end
-end
-
-
-
-
-
-
-
-
-
 end

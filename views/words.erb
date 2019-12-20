@@ -1,0 +1,27 @@
+<h1>Words and Definitions</h1>
+
+<h3>Words</h3>
+
+<% if @words.any? %>
+<table style="width:100%">
+  <tr>
+    <th>Words</th>
+  </tr>
+  <% @words.each do |word| %>
+  <tr>
+    <td><a href="/words/<%= word.id %>"><%= word.actual_word %></a></td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p>There are currently no words to display.</p>
+<% end %>
+<a href="/words/new">Add a new word</a>
+
+<!-- <form action="/words">
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input id="search" name="search" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form> -->
