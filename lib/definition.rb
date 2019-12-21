@@ -15,6 +15,16 @@ class Definition
     Word.find(self.actual_word)
   end
 
+  def self.find_by_word(actual_word)
+    definitions = []
+    @@definitions.values.each do |definition|
+      if definition.actual_word == actual_word
+        definitions.push(definition)
+      end
+    end
+    definition
+  end
+
   def self.all
     @@definitions.values
   end

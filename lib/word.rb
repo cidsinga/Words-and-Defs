@@ -12,12 +12,16 @@ class Word
   end
 
   def update(actual_word)
-  @actual_word = actual_word
-end
+    @actual_word = actual_word
+  end
 
-def delete
-  @@words.delete(@id)
-end
+  def delete
+    @@words.delete(@id)
+  end
+
+  def definitions
+    Definition.find_by_word(self.id)
+  end
 
   ##class Methods
   @@words = {}
