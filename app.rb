@@ -23,6 +23,13 @@ end
 get('/words/new') { erb(:words_new) }
 
 get('/words/:id') do
-    @word = Word.find(params[:id])
+    @word = Word.find(params[:id].to_i)
     erb(:word)
+end
+
+post ('/words/:id/definitions') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.new(params[:word_def], [:actual_word])
+  definition.update(params[:word_def], @word.id)
+  erb(:word)
 end

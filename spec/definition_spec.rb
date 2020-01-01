@@ -36,7 +36,7 @@ describe '#Definition' do
   end
 
   describe('.find') do
-    it("finds a song by id") do
+    it("finds a definition by id") do
       definition1 = Definition.new("dwelling place", @actual_word, nil).save
       definition2 = Definition.new("shelter", @actual_word, nil).save
       expect(Definition.find(definition1.id)).to(eq(definition1))

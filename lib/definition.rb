@@ -22,7 +22,7 @@ class Definition
         definitions.push(definition)
       end
     end
-    definition
+    definitions
   end
 
   def self.all
