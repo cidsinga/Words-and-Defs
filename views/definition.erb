@@ -10,7 +10,7 @@
   <button type="submit" class="btn">Update</button>
 
 </form>
-<form action="/words/<%= @definition.actual_word %>/songs/<%= @definition.word_def %>" method="post">
+<form action="/words/<%= @definition.actual_word %>/definition/<%= @definition.word_def %>" method="post">
   <input name="_method" type="hidden" value="delete">
 
   <button type="submit">Delete definition</button>
