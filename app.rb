@@ -42,14 +42,14 @@ end
 
 patch ('/words/:id/definitions/:def_id' ) do
   @word = Word.find(params[:id].to_i())
-  definition = Definition.find(params[:def_id].to_i())
-  definition.update(params[:word_def], @word.id)
-  erb(:word)
+  @definition = Definition.find(params[:def_id].to_i())
+  @definition.update(params[:word_def], @word.id)
+  erb(:definition)
 end
 
 delete('/words/:id/definitions/:def_id') do
-  definition = Definition.find(params[:def_id].to_i())
-  definition.delete
+  @definition = Definition.find(params[:def_id].to_i())
+  @definition.delete
   @word = Word.find(params[:id].to_i())
-  erb(:word)
+  erb(:definition)
 end
